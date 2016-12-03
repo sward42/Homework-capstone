@@ -1,0 +1,50 @@
+{
+	"profiles":{
+		"profile0":{
+	    	"profileName": "Henry",
+	    	"uid":"XYsIK8pC9Ghqo9cV7EHQ22o5eMg1"
+    	},
+    	"profile1":{
+	    	"profileName": "Liam",
+	    	"uid":"XYsIK8pC9Ghqo9cV7EHQ22o5eMg1"
+    	},
+    	"profile2":{
+	    	"profileName": "Olivia",
+	    	"uid":"A8LWa5JCAZRmp9ZLt12wTOZu7V63"
+    	}
+	},
+	"homework":{
+		"homework0":{
+			"homeworkTitle": "Spelling List",
+			"profileId": "profile0",
+			"dueDate": "December 15, 2016",
+			"isCompleted": "false",
+			"uid": "XYsIK8pC9Ghqo9cV7EHQ22o5eMg1"
+		},
+		"homework1":{
+			"homeworkTitle": "Subtraction Worksheet",
+			"profileId": "profile0",
+			"dueDate": "December 15, 2016",
+			"isCompleted": "true",
+			"uid": "XYsIK8pC9Ghqo9cV7EHQ22o5eMg1"
+		},
+		"homework2":{
+			"homeworkTitle": "Subtraction Worksheet",
+			"profileId": "profile0",
+			"dueDate": "December 15, 2016",
+			"isCompleted": "false",
+			"uid": "A8LWa5JCAZRmp9ZLt12wTOZu7V63"
+		}
+		
+	},
+	"users":{
+		"user0":{
+			"uid":"XYsIK8pC9Ghqo9cV7EHQ22o5eMg1",
+			"username":"Sarah"
+		},
+		"user1":{
+			"uid": "A8LWa5JCAZRmp9ZLt12wTOZu7V63",
+			"username":"a"
+		}
+	}
+}
