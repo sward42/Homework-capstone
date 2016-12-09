@@ -12,6 +12,7 @@
     "tests"
   ],
   "dependencies": {
-    "angular-route": "^1.5.9"
+    "angular-route": "^1.5.9",
+    "angularjs-datepicker": "^2.1.7"
   }
 }

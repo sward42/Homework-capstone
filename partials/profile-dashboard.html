@@ -1,0 +1,20 @@
+<div class="row">
+
+	<div ng-repeat="profilearray in profilesArray | filter: {id: profileID}">
+		<h3>Welcome Back {{profilearray.profileName}}!</h3>
+		<h3>You've Earned {{profilearray.rewardPoints}} Reward Points</h3>
+	</div>
+</div>
+
+<div class="row homework-list">
+	<div class="col s11 offset-s1">
+		<a href="#/homework/list/{{profileID}}"><h3>Upcoming Homework</h3></a>
+	</div>
+<div ng-repeat="homeworkItem in homeworkItems | filter: {profileId: profileID}">
+	<div class="col s9 offset-s1">
+		<p>{{homeworkItem.homeworkTitle}}</p>
+	</div>
+</div>
+
+
+</div>

@@ -1,0 +1,30 @@
+<div class="row">
+    <div class="col s2 offset-s10">
+        <a href="#/homework/new"><button class="btn">Create New Homework Item</button></a>
+    </div>
+</div>
+
+<h3>Homework Due:</h3>
+<div ng-repeat="homeworkItem in homeworkItems | filter: {profileId:profileID}| filter: {isCompleted:false}">
+   
+        <div class="row">
+            <div class="col s1"><input type="checkbox" ng-model="homeworkItem.isCompleted" ng-change="inputChange(homeworkItem)"></div>
+            <div class="col s8"><a href="#/homework/view/{{homeworkItem.id}}">{{homeworkItem.homeworkTitle}}</a></div>
+            <div class="col s2">{{homeworkItem.dueDate}}</div>
+            <div class="col s1"><button class="btn fa fa-trash-o" ng-click="deleteHomework(homeworkItem.id)"></button></div>
+        </div>
+    </div>
+</div>
+
+<h3>Completed:</h3>
+<div ng-repeat="homeworkItem in homeworkItems | filter: {profileId:profileID}| filter: {isCompleted:true}">
+    <div class="panel panel-default">
+        <div class="panel-body">
+            <div class="col s1"><input type="checkbox" ng-model="homeworkItem.isCompleted" ng-change="inputChange(homeworkItem)"></div>
+            <div class="col s9"><a href="#/homework/view/{{homeworkItem.id}}">{{homeworkItem.homeworkTitle}}</a></div>
+            <div class="col s1">{{homeworkItem.dueDate}}</div>
+            <div class="col s1"><button class="btn fa fa-trash-o" ng-click="deleteHomework(homeworkItem.id)"></button></div>
+        </div>
+    </div>
+</div>
+</div>

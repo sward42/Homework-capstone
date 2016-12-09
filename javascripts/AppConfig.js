@@ -37,28 +37,43 @@ app.config(function($routeProvider){
 		.when('/profiles/list', {
 			templateUrl: 'partials/profiles-list.html',
 			controller: 'ProfileListCtrl',
-			// resolve: {isAuth}
+			resolve: {isAuth}
 		})
-		// .when('/boards/new', {
-		// 	templateUrl: 'partials/board-new.html',
-		// 	controller: 'BoardNewCtrl',
-		// 	resolve: {isAuth}
-		// })
+		.when('/profile/new', {
+			templateUrl: 'partials/profile-new.html',
+			controller: 'ProfileNewCtrl',
+			resolve: {isAuth}
+		})
 		// .when('/boards/edit/:id', {
 		// 	templateUrl: 'partials/board-edit.html',
 		// 	controller: 'BoardEditCtrl',
 		// 	resolve: {isAuth}
 		// })
-		// .when('/pins/list/:id', {
-		// 	templateUrl: 'partials/pin-list.html',
-		// 	controller: 'PinListCtrl',
-		// 	resolve: {isAuth}
-		// })
-		// .when('/pins/view/:id', {
-		// 	templateUrl: 'partials/pin-view.html',
-		// 	controller: 'PinViewCtrl',
-		// 	resolve: {isAuth}
-		// })
+		.when('/profile/dashboard/:id', {
+			templateUrl: 'partials/profile-dashboard.html',
+			controller: 'ProfileDashboardCtrl',
+			resolve: {isAuth}
+		})
+		.when('/homework/list/:id', {
+			templateUrl: 'partials/homework.html',
+			controller: 'HomeworkCtrl',
+			resolve: {isAuth}
+		})
+		.when('/homework/new/', {
+			templateUrl: 'partials/homework-new.html',
+			controller: 'HomeworkNewCtrl',
+			resolve: {isAuth}
+		})
+		.when('/homework/view/:id', {
+			templateUrl: 'partials/homework-view.html',
+			controller: 'HomeworkViewCtrl',
+			resolve: {isAuth}
+		})
+		.when('/homework/edit/:id', {
+			templateUrl: 'partials/homework-edit.html',
+			controller: 'HomeworkEditCtrl',
+			resolve: {isAuth}
+		})
 		.when('/logout', {
 			templateUrl: 'partials/auth.html',
 			controller: 'AuthCtrl'
