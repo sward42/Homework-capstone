@@ -1,0 +1,8 @@
+
+<div class="row" ng-controller="ProfileNavCtrl">
+    <div class="col s12">
+      <ul class="tabs" >
+        <li class="tab col s2" ng-repeat="profileNavItem in profileNavItems" ng-show="user"><a href="{{profileNavItem.url}}">{{profileNavItem.name}}</a></li>
+      </ul>
+    </div>
+

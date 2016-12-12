@@ -1,0 +1,13 @@
+<div ng-include ="'./partials/profile-nav.html'"></div>
+
+<h3>Edit Homework Item</h3>
+
+<form>
+    <div class="row">
+        <input placeholder="Homework Title" id="hw-title" type="text" class="validate" ng-model="editedHomework.homeworkTitle">
+    </div>
+    <div class="row">
+        <input placeholder="Due Date" id="due-date" type="date" class="datepicker" ng-model="editedHomework.dueDate">
+    </div>
+    <div class="col s2 offset-s10"><button class="btn" ng-click="addEditedHomework()">Update Homework</button></div>
+</form>

@@ -1,0 +1,82 @@
+{
+	"profiles":{
+		"profile0":{
+	    	"profileName": "Henry",
+	    	"profileImage": "",
+	    	"grade": "1",
+	    	"rewardPoints": 0,
+	    	"uid":"XYsIK8pC9Ghqo9cV7EHQ22o5eMg1"
+    	},
+    	"profile1":{
+	    	"profileName": "Liam",
+	    	"profileImage": "",
+	    	"grade": "3",
+	    	"rewardPoints": 0,
+	    	"uid":"XYsIK8pC9Ghqo9cV7EHQ22o5eMg1"
+    	},
+    	"profile2":{
+	    	"profileName": "Olivia",
+	    	"profileImage": "",
+	    	"grade": "1",
+	    	"rewardPoints": 0,
+	    	"uid":"A8LWa5JCAZRmp9ZLt12wTOZu7V63"
+    	}
+	},
+	"homework":{
+		"homework0":{
+			"homeworkTitle": "Spelling List",
+			"dueDate": "12/15/2016",
+			"isCompleted": "false",
+			"profileId": "profile0",
+			"uid": "XYsIK8pC9Ghqo9cV7EHQ22o5eMg1"
+		},
+		"homework1":{
+			"homeworkTitle": "Subtraction Worksheet",
+			"dueDate": "12/15/2016",
+			"isCompleted": "true",
+			"profileId": "profile0",
+			"uid": "XYsIK8pC9Ghqo9cV7EHQ22o5eMg1"
+		},
+		"homework2":{
+			"homeworkTitle": "Subtraction Worksheet",
+			"dueDate": "12/15/2016",
+			"isCompleted": "false",
+			"profileId": "profile2",
+			"uid": "A8LWa5JCAZRmp9ZLt12wTOZu7V63"
+		}
+		
+	},
+	"users":{
+		"user0":{
+			"uid":"XYsIK8pC9Ghqo9cV7EHQ22o5eMg1",
+			"username":"Sarah"
+		},
+		"user1":{
+			"uid": "A8LWa5JCAZRmp9ZLt12wTOZu7V63",
+			"username":"a"
+		}
+	},
+	"reading":{
+		"book0":{
+			"bookTitle":"Where the Wild Things Are",
+			"author":"Maurice Sendak",
+			"dateRead":"12/06/2016",
+			"profileId":"profile2",
+			"uid":"A8LWa5JCAZRmp9ZLt12wTOZu7V63"
+		},
+		"book1":{
+			"bookTitle":"Hop on Pop",
+			"author":"Dr. Seuss",
+			"dateRead":"12/08/2016",
+			"profileId":"profile2",
+			"uid":"A8LWa5JCAZRmp9ZLt12wTOZu7V63"
+		},
+		"book2":{
+			"bookTitle":"The Graveyard Book",
+			"author":"Neil Gaiman",
+			"dateRead":"12/02/2016",
+			"profileId":"profile0",
+			"uid":"XYsIK8pC9Ghqo9cV7EHQ22o5eMg1"
+		}
+	}
+}

@@ -1,0 +1,53 @@
+<div ng-include ="'./partials/profile-nav.html'"></div>
+
+
+<div class="row">
+    <div class="col s2 offset-s10">
+        <a href="#/homework/new"><button class="btn">Create New Homework Item</button></a>
+    </div>
+</div>
+
+<h3>Homework Due:</h3>
+<div ng-repeat="homeworkItem in homeworkItems | filter: {profileId:profileID}| filter: {isCompleted:false}">
+
+   <div class="row" >
+        <form action="#">
+            <div class="col s8" >
+                <p>
+                   <input type="checkbox" id="hw{{homeworkItem.id}}" ng-model="homeworkItem.isCompleted" ng-change="inputChange(homeworkItem)"/>
+                   <label for="hw{{homeworkItem.id}}">{{homeworkItem.homeworkTitle}}</label>
+                </p>
+                 
+            </div>
+            <div class="col s1">{{homeworkItem.dueDate | date : "MM/dd/yyyy"}}</div>
+            <div class="col s1"><button class="btn fa fa-trash-o" ng-click="deleteHomework(homeworkItem.id)"></button></div>
+            <div class="col s1"><a href="#/homework/view/{{homeworkItem.id}}"<button class="btn fa fa-pencil"></button></a></div>
+        </form>
+    </div>
+
+</div>
+
+<h3>Completed:</h3>
+<div ng-repeat="homeworkItem in homeworkItems | filter: {profileId:profileID}| filter: {isCompleted:true}">
+  
+    <div class="row" >
+        <form action="#">
+            <div class="col s9" >
+                <p>
+                   <input type="checkbox" id="hw{{homeworkItem.id}}" ng-model="homeworkItem.isCompleted" ng-change="inputChange(homeworkItem)"/>
+                   <label for="hw{{homeworkItem.id}}">{{homeworkItem.homeworkTitle}}</label>
+                </p>
+                 
+            </div>
+            <div class="col s1">{{homeworkItem.dueDate | date : "MM/dd/yyyy"}}</div>
+            <div class="col s1"><button class="btn fa fa-trash-o" ng-click="deleteHomework(homeworkItem.id)"></button></div>
+        </form>
+    </div>
+    
+
+</div>
+
+
+
+
+</div>

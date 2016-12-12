@@ -1,0 +1,9 @@
+<nav ng-controller="NavCtrl">
+
+    <div class="nav-wrapper">
+      <a href="#" class="brand-logo">HomeWork</a>
+      <ul class="right hide-on-med-and-down" ng-repeat="navItem in navItems" ng-show="user">
+        <li><a href="{{navItem.url}}">{{navItem.name}}</a></li>
+      </ul>
+    </div>
+  </nav>

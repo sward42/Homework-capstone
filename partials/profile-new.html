@@ -1,0 +1,20 @@
+<h3>Create New Child Profile</h3>
+
+<div class="row">
+	<form class="col s12">
+		
+		<div class="input-field">
+			<input placeholder="Child Name" id="profile_name" type="text" class="validate" ng-model="newProfileName">
+		</div>
+
+		<div class="input-field">
+			<select ng-model="newProfileGrade" material-select >
+				<option value="" disabled selected>Select Grade Level</option>
+				<option ng-repeat="gradeLevel in gradeLevels" value="{{gradeLevel.grade}}">{{gradeLevel.grade}}</option>
+			</select>
+		</div>
+
+		<button class="btn col s2" ng-click="createNewProfileThenReloadProfiles()">Create!</button>
+		
+	</form>
+</div>

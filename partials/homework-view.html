@@ -1,0 +1,5 @@
+<div ng-include ="'./partials/profile-nav.html'"></div>
+
+<h3>{{selectedHomework.homeworkTitle}}</h3>
+<h4>Due: {{selectedHomework.dueDate | date: "MM/dd/yyyy"}}</h4>
+<a ng-href="#/homework/edit/{{selectedHomework.id}}"><button class="btn fa fa-pencil-square-o"></button></a>

@@ -1,0 +1,23 @@
+<div ng-include ="'./partials/profile-nav.html'"></div>
+
+
+<div class="row">
+    <div class="col s2 offset-s10">
+        <a href="#/reading/new"><button class="btn">Add Book</button></a>
+    </div>
+</div>
+
+<h3>Reading Log</h3>
+<div ng-repeat="readBook in readBooks | filter: {profileId:profileID}">
+
+   <div class="row" >
+        <form action="#">
+            <div class="col s7">{{readBook.bookTitle}}</div>
+            <div class="col s2">{{readBook.author}}</div>
+            <div class="col s1">{{readBook.dateRead | date : "MM/dd/yyyy"}}</div>
+            <div class="col s1"><button class="btn fa fa-trash-o" ng-click="deleteBook(readBook.id)"></button></div>
+            
+        </form>
+    </div>
+
+</div>

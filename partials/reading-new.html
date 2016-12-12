@@ -1,0 +1,18 @@
+<div ng-include ="'./partials/profile-nav.html'"></div>
+
+<h3>New Book</h3>
+
+<form>
+    <div class="row">
+        <input placeholder="Book Title" id="book-title" type="text" class="validate" ng-model="newBook.bookTitle">
+    </div>
+    <div class="row">
+        <input placeholder="Author" id="book-author" type="text" class="validate" ng-model="newBook.author">
+    </div>
+    <div class="row">
+        <input placeholder="Due Date" id="date-read" type="date" class="datepicker" ng-model="newBook.dateRead">
+    </div>
+    
+    
+    <div class="col s2 offset-s10"><button class="btn btn-danger" ng-click="addNewBook()">Add Book</button></div>
+</form>
