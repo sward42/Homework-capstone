@@ -8,6 +8,7 @@
       <div class="card blue-grey darken-1">
         <div class="card-content white-text">
          <a href="#/profile/dashboard/{{profile.id}}"><span class="card-title">{{profile.profileName}}</span></a>
+         <div><span>Grade {{profile.grade}}</span></div>
         </div>
         <div class="card-action">
           <button class="waves-effect waves-light btn col s4 offset-s1" ng-click="deleteProfile(profile.id)">Delete</button>

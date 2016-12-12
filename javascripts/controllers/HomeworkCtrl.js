@@ -1,6 +1,6 @@
 "use strict";
 
-app.controller("HomeworkCtrl", function($scope, $rootScope, $routeParams, HomeworkFactory){
+app.controller("HomeworkCtrl", function($scope, $location, $rootScope, $routeParams, HomeworkFactory){
 
 	$scope.homeworkItems = [];
 
@@ -28,6 +28,16 @@ app.controller("HomeworkCtrl", function($scope, $rootScope, $routeParams, Homewo
 
 		//$scope.saveEditedPin(selectedBoard, $scope.selectedPin);
 		});
+	};
+
+	$scope.inputChange = function(thingy){
+		HomeworkFactory.editHomework(thingy).then(function(response){
+			console.log("ctrl inputChange response", response);
+		});
+	};
+
+	$scope.toSingleView = function(homeworkId){
+		$location.url("/homework/view/homeworkId"); 
 	};
 
 

@@ -24,6 +24,7 @@ app.factory("ProfileFactory", function($q, $http, FIREBASE_CONFIG){
 			$http.post(`${FIREBASE_CONFIG.databaseURL}/profiles.json`, JSON.stringify({
 				profileName: newProfile.profileName,
 				profileImage: newProfile.profileImage,
+				grade: newProfile.grade,
 				rewardPoints: newProfile.rewardPoints,
 				uid: newProfile.uid
 				})
@@ -65,6 +66,7 @@ app.factory("ProfileFactory", function($q, $http, FIREBASE_CONFIG){
 				JSON.stringify({
 					profileName: editProfile.profileName,
 					profileImage: editProfile.profileImage,
+					grade: editProfile.grade,
 					rewardPoints: editProfile.rewardPoints,
 					uid: editProfile.uid
 				})

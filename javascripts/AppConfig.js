@@ -74,6 +74,16 @@ app.config(function($routeProvider){
 			controller: 'HomeworkEditCtrl',
 			resolve: {isAuth}
 		})
+		.when('/reading/:id', {
+			templateUrl: 'partials/reading.html',
+			controller: 'ReadingCtrl',
+			resolve: {isAuth}
+		})
+		.when('/reading/new/', {
+			templateUrl: 'partials/reading-new.html',
+			controller: 'ReadingNewCtrl',
+			resolve: {isAuth}
+		})
 		.when('/logout', {
 			templateUrl: 'partials/auth.html',
 			controller: 'AuthCtrl'
