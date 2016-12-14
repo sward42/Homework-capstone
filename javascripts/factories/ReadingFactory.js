@@ -25,7 +25,7 @@ var getReadingLog = function(userId){
 			$http.post(`${FIREBASE_CONFIG.databaseURL}/reading.json`, JSON.stringify({
 				bookTitle: newBook.bookTitle,
 				author: newBook.author,
-				dateRead: newBook.dueDate,
+				dateRead: newBook.dateRead,
 				profileId: newBook.profileId,
 				uid: newBook.uid
 				})

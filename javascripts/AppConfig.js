@@ -79,14 +79,24 @@ app.config(function($routeProvider){
 			controller: 'ReadingCtrl',
 			resolve: {isAuth}
 		})
-		.when('/reading/new/', {
+		.when('/new_reading/', {
 			templateUrl: 'partials/reading-new.html',
 			controller: 'ReadingNewCtrl',
+			resolve: {isAuth}
+		})
+		.when('/reward/list/:id', {
+			templateUrl: 'partials/reward-list.html',
+			controller: 'RewardListCtrl',
+			resolve: {isAuth}
+		})
+		.when('/reward/new/', {
+			templateUrl: 'partials/reward-new.html',
+			controller: 'RewardNewCtrl',
 			resolve: {isAuth}
 		})
 		.when('/logout', {
 			templateUrl: 'partials/auth.html',
 			controller: 'AuthCtrl'
 		})
-		.otherwise('/auth');
+	 	.otherwise('/auth');
 });

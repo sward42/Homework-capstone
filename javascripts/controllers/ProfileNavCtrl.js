@@ -2,27 +2,30 @@
 
 app.controller("ProfileNavCtrl", function($scope, $rootScope){
 
+	let childId = $rootScope.profileID;
+	
 	$scope.profileNavItems = [
 	{
 		name:"Dashboard", 
-		url:"#/profile/dashboard/$rootScope.profileID"
+		url:"#/profile/dashboard/"+childId
 	},
 	{
 		name:"Homework", 
-		url:"#/homework/list/$rootScope.profileID"
+		url:"#/homework/list/"+childId
 	},
 	{
 		name:"Reading Log", 
-		url:"#/reading/$rootScope.profileID"
+		url:"#/reading/"+childId
 	},
 	{
 		name:"Flashcards", 
-		url:"#/flashcards/$rootScope.profileID"
+		url:"#/flashcards/"+childId
 	},
 	{
 		name:"Reward Points", 
-		url:"#/rewards/$rootScope.profileID"
+		url:"#/reward/list/"+childId
 	}
 	];
+
 });
 

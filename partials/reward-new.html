@@ -1,0 +1,18 @@
+<div ng-include ="'./partials/profile-nav.html'"></div>
+
+<h3>New Reward</h3>
+
+<form>
+    <div class="row">
+        <input placeholder="Reward Title" id="reward-title" type="text" class="validate" ng-model="newReward.rewardTitle">
+    </div>
+    <div class="row">
+        <input placeholder="Description" id="reward-description" type="text" class="validate" ng-model="newReward.description">
+    </div>
+    <div class="row">
+        <input placeholder="Points Cost" id="reward-cost" type="text" ng-model="newReward.pointsNeeded">
+    </div>
+    
+    
+    <div class="col s2 offset-s10"><button class="btn btn-danger" ng-click="addNewReward()">Add Book</button></div>
+</form>

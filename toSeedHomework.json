@@ -18,7 +18,7 @@
 	    	"profileName": "Olivia",
 	    	"profileImage": "",
 	    	"grade": "1",
-	    	"rewardPoints": 0,
+	    	"rewardPoints": 100,
 	    	"uid":"A8LWa5JCAZRmp9ZLt12wTOZu7V63"
     	}
 	},
@@ -77,6 +77,29 @@
 			"dateRead":"12/02/2016",
 			"profileId":"profile0",
 			"uid":"XYsIK8pC9Ghqo9cV7EHQ22o5eMg1"
+		}
+	},
+	"rewards":{
+		"reward0":{
+			"rewardTitle":"Wii Time",
+			"description":"Play 30 minutes of Wii U",
+			"pointsNeeded":"50",
+			"profileId":"profile2",
+			"uid":"A8LWa5JCAZRmp9ZLt12wTOZu7V63"
+		},
+		"reward1":{
+			"rewardTitle":"$5 Toy",
+			"description":"Get $5 to spend on anything",
+			"pointsNeeded":"100",
+			"profileId":"profile2",
+			"uid":"A8LWa5JCAZRmp9ZLt12wTOZu7V63"
+		},
+		"reward2":{
+			"rewardTitle":"Zoo Trip",
+			"description":"Pick a day for a trip to the Zoo",
+			"pointsNeeded":"75",
+			"profileId":"profile2",
+			"uid":"A8LWa5JCAZRmp9ZLt12wTOZu7V63"
 		}
 	}
 }

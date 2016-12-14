@@ -11,10 +11,10 @@
 <div ng-repeat="homeworkItem in homeworkItems | filter: {profileId:profileID}| filter: {isCompleted:false}">
 
    <div class="row" >
-        <form action="#">
+        <form>
             <div class="col s8" >
                 <p>
-                   <input type="checkbox" id="hw{{homeworkItem.id}}" ng-model="homeworkItem.isCompleted" ng-change="inputChange(homeworkItem)"/>
+                   <input type="checkbox" id="hw{{homeworkItem.id}}" ng-model="homeworkItem.isCompleted" ng-change="inputChange(homeworkItem); selectProfile(homeworkItem.profileId)"/>
                    <label for="hw{{homeworkItem.id}}">{{homeworkItem.homeworkTitle}}</label>
                 </p>
                  
@@ -31,10 +31,10 @@
 <div ng-repeat="homeworkItem in homeworkItems | filter: {profileId:profileID}| filter: {isCompleted:true}">
   
     <div class="row" >
-        <form action="#">
+        <form>
             <div class="col s9" >
                 <p>
-                   <input type="checkbox" id="hw{{homeworkItem.id}}" ng-model="homeworkItem.isCompleted" ng-change="inputChange(homeworkItem)"/>
+                   <input type="checkbox" disabled="disabled" id="hw{{homeworkItem.id}}" ng-model="homeworkItem.isCompleted" ng-change="inputChange(homeworkItem)"/>
                    <label for="hw{{homeworkItem.id}}">{{homeworkItem.homeworkTitle}}</label>
                 </p>
                  

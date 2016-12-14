@@ -1,15 +1,35 @@
 "use strict";
 
-app.controller("ReadingNewCtrl", function($scope, $rootScope, $location, ReadingFactory){
+app.controller("ReadingNewCtrl", function($scope, $rootScope, $location, ReadingFactory, ProfileFactory){
 
 	$scope.newBook = {};
 
+	$scope.pointsProfile = {};
+	$scope.selectProfile = function(currentProfileId, anyProfile){
+		ProfileFactory.getSingleProfile(currentProfileId).then(function(currentProfile){
+			currentProfile.id = currentProfileId;
+			$scope.pointsProfile = currentProfile;
+			$scope.pointsProfile.rewardPoints += 5;
+			console.log("pointsProfile", $scope.pointsProfile);
+
+			$scope.addPoints($scope.pointsProfile);
+		});
+	};
+
+	$scope.addPoints = function(anyProfile){
+		ProfileFactory.addRewardPoints(anyProfile).then(function(response){
+			console.log("points response", response);
+		});
+	};
+
+
 	$scope.addNewBook = function(){
 		console.log("profileID", $rootScope.profileID);
-		$scope.newHomework.profileId = $rootScope.profileID;
-		$scope.newHomework.uid = $rootScope.user.uid;
+		$scope.newBook.profileId = $rootScope.profileID;
+		$scope.newBook.uid = $rootScope.user.uid;
 		ReadingFactory.postNewBook($scope.newBook).then(function(bookId){
-			$location.url("/reading/$rootScope.profileID");
+			
+			$location.url("/reading/"+$rootScope.profileID);
 			$scope.newBook = {};
 		});
 	};

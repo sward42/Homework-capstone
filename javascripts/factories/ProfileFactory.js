@@ -60,6 +60,24 @@ app.factory("ProfileFactory", function($q, $http, FIREBASE_CONFIG){
 			 });
 		});
 	};
+	var addRewardPoints = function(pointsProfile){
+		return $q((resolve, reject)=>{
+			$http.patch(`${FIREBASE_CONFIG.databaseURL}/profiles/${pointsProfile.id}.json`, 
+				JSON.stringify({
+					
+					rewardPoints: pointsProfile.rewardPoints,
+					
+				})
+			)
+			 .success( (editResponse)=>{
+			 	resolve(editResponse);
+			 })
+			 .error( (errorResponse)=>{
+			 	reject(errorResponse);
+			 });
+		});
+	};
+
 	var editProfile = function(editProfile){
 		return $q((resolve, reject)=>{
 			$http.put(`${FIREBASE_CONFIG.databaseURL}/profiles/${editProfile.id}.json`, 
@@ -79,5 +97,5 @@ app.factory("ProfileFactory", function($q, $http, FIREBASE_CONFIG){
 			 });
 		});
 	};
-	return {getProfileList:getProfileList, postNewProfile:postNewProfile, deleteProfile:deleteProfile, getSingleProfile:getSingleProfile, editProfile: editProfile};	
+	return {getProfileList:getProfileList, postNewProfile:postNewProfile, deleteProfile:deleteProfile, getSingleProfile:getSingleProfile, editProfile: editProfile, addRewardPoints:addRewardPoints};	
 });

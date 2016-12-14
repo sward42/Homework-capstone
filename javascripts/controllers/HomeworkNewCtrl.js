@@ -10,7 +10,7 @@ app.controller("HomeworkNewCtrl", function ($scope, $rootScope, $location, $rout
 		$scope.newHomework.profileId = $rootScope.profileID;
 		$scope.newHomework.uid = $rootScope.user.uid;
 		HomeworkFactory.postNewHomework($scope.newHomework).then(function(homeworkId){
-			$location.url("/homework/list/$rootScope.profileID");
+			$location.url("/homework/list/"+$rootScope.profileID);
 			$scope.newHomework = {};
 		});
 	};
