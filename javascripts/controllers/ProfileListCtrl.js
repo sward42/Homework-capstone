@@ -4,6 +4,7 @@ app.controller("ProfileListCtrl", function($scope, $rootScope, $location, Profil
 
 	$scope.profiles = [];
 	$scope.profleToEdit = {};
+	$rootScope.profileID = null;
 
 	ProfileFactory.getProfileList($rootScope.user.uid).then(function(profiles) {
     $scope.profiles = profiles;

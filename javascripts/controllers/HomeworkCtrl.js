@@ -1,6 +1,6 @@
 "use strict";
 
-app.controller("HomeworkCtrl", function($scope, $location, $rootScope, $routeParams, HomeworkFactory){
+app.controller("HomeworkCtrl", function($scope, $location, $rootScope, $routeParams, HomeworkFactory, ProfileFactory){
 
 	$scope.homeworkItems = [];
 
@@ -40,6 +40,24 @@ app.controller("HomeworkCtrl", function($scope, $location, $rootScope, $routePar
 		$location.url("/homework/view/homeworkId"); 
 	};
 
+
+	$scope.pointsProfile = {};
+	$scope.selectProfile = function(currentProfileId, anyProfile){
+		ProfileFactory.getSingleProfile(currentProfileId).then(function(currentProfile){
+			currentProfile.id = currentProfileId;
+			$scope.pointsProfile = currentProfile;
+			$scope.pointsProfile.rewardPoints += 5;
+			console.log("pointsProfile", $scope.pointsProfile);
+
+			$scope.addPoints($scope.pointsProfile);
+		});
+	};
+
+	$scope.addPoints = function(anyProfile){
+		ProfileFactory.addRewardPoints(anyProfile).then(function(response){
+			console.log("points response", response);
+		});
+	};
 
 	// $scope.editedPin = {};
 	// $scope.saveEditedPin = (selectedBoard, selectedPin)=>{
