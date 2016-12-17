@@ -94,6 +94,11 @@ app.config(function($routeProvider){
 			controller: 'RewardNewCtrl',
 			resolve: {isAuth}
 		})
+		.when('/flashcard/main/:id', {
+			templateUrl: 'partials/flashcard-main.html',
+			controller: 'FlashcardMainCtrl',
+			resolve: {isAuth}
+		})
 		.when('/logout', {
 			templateUrl: 'partials/auth.html',
 			controller: 'AuthCtrl'

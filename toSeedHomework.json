@@ -101,5 +101,32 @@
 			"profileId":"profile2",
 			"uid":"A8LWa5JCAZRmp9ZLt12wTOZu7V63"
 		}
+	},
+	"spellingWords":{
+		"spellingWord0":{
+			"spellingName":"cat",
+			"profileId":"profile2",
+			"uid":"A8LWa5JCAZRmp9ZLt12wTOZu7V63"
+		},
+		"spellingWord1":{
+			"spellingName":"what",
+			"profileId":"profile2",
+			"uid":"A8LWa5JCAZRmp9ZLt12wTOZu7V63"
+		},
+		"spellingWord2":{
+			"spellingName":"where",
+			"profileId":"profile2",
+			"uid":"A8LWa5JCAZRmp9ZLt12wTOZu7V63"
+		},
+		"spellingWord3":{
+			"spellingName":"other",
+			"profileId":"profile2",
+			"uid":"A8LWa5JCAZRmp9ZLt12wTOZu7V63"
+		},
+		"spellingWord4":{
+			"spellingName":"which",
+			"profileId":"profile2",
+			"uid":"A8LWa5JCAZRmp9ZLt12wTOZu7V63"
+		}
 	}
 }
