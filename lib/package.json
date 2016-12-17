@@ -21,6 +21,8 @@
   },
   "dependencies": {
     "angularjs-datepicker": "^2.1.7",
+    "grunt-contrib-copy": "^1.0.0",
+    "grunt-sass": "^2.0.0",
     "jquery": "^3.1.1"
   }
 }

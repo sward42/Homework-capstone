@@ -1,25 +1,22 @@
 <div ng-include ="'./partials/profile-nav.html'"></div>
 
 <div class="row">
-	<div class="col s10"><h4>Your Flashcards</h4></div>
-	<div class="col s2"><button class="btn" ng-click="addNewHomework()">Create New Flashcard</button></div>
+	<div class="col s2 offset-s10"><button class="btn" ng-click="addNewHomework()">Create New Flashcard</button></div>
 </div>
 
 <div class="row">
-	<div class="col s3 offset-1"><button class="btn" ng-click="addNewHomework()">Sight Words</button></div>
-	<div class="col s3 offset-1"><button class="btn" ng-click="addNewHomework()">Spelling Words</button></div>
-	<div class="col s3 offset-1"><button class="btn" ng-click="addNewHomework()">Vocab Words</button></div>
+	<div class="col s4 offset-s4"><h4>Your Flashcards</h4></div>
 </div>
 
-<!-- <div class="row">
-	<div class="carousel carousel-slider center col s10 offset-s1" data-indicators="true" ng-repeat="spellingCard in spellingCards">
-		<div class="carousel-fixed-item center">
-		  <a class="btn waves-effect white grey-text darken-text-2">Exit</a>
-		</div>
-		<div class="carousel-item red white-text" href="#one!" >
-		  <h2>ldskfj</h2>
-		  <p class="white-text">This is your first panel</p>
-		</div>
-		
-  	</div>
-</div> -->
+<div class="row">
+	<div class="col s4 offset-s4"><button class="btn" ng-click="showSightCards()">Sight Words</button></div>
+</div>
+
+<div class="row">	
+	<div class="col s4 offset-s4"><button class="btn" ng-click="showSpellingCards()">Spelling Words</button></div>
+</div>
+
+<div class="row">	
+	<div class="col s4 offset-s4"><button class="btn" ng-click="showVocabCards()">Vocab Words</button></div>
+</div>
+

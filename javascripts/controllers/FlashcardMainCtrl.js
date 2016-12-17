@@ -10,11 +10,16 @@ $scope.spellingCards = [];
 	let getSpellingCards = function(){
 		FlashcardFactory.getSpellingList($rootScope.user.uid).then(function(fbPins){
 			$scope.spellingCards = fbPins;
+
 			console.log("spellingCards", $scope.spellingCards);	
 		});
 	};
 
 	getSpellingCards();
+
+	$scope.showSpellingCards = function(){
+		$location.url("/cards/spelling/"+$rootScope.profileID);
+	};
 
 	// $scope.deleteBook = function(bookId){
 	// 	console.log("bookId", bookId);

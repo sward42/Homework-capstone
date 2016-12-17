@@ -99,6 +99,11 @@ app.config(function($routeProvider){
 			controller: 'FlashcardMainCtrl',
 			resolve: {isAuth}
 		})
+		.when('/cards/spelling/:id', {
+			templateUrl: 'partials/cards-spelling.html',
+			controller: 'CardsSpellingCtrl',
+			resolve: {isAuth}
+		})
 		.when('/logout', {
 			templateUrl: 'partials/auth.html',
 			controller: 'AuthCtrl'
