@@ -9,7 +9,7 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "angular": "^1.5.8",
+    "angular": "1.5.8",
     "grunt": "^1.0.1",
     "grunt-contrib-jshint": "^1.0.0",
     "grunt-contrib-nodeunit": "^1.0.0",
