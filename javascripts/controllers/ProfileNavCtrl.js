@@ -19,7 +19,7 @@ app.controller("ProfileNavCtrl", function($scope, $rootScope){
 	},
 	{
 		name:"Flashcards", 
-		url:"#/flashcards/"+childId
+		url:"#/flashcard/main/"+childId
 	},
 	{
 		name:"Reward Points", 
