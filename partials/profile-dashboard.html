@@ -3,8 +3,10 @@
 <div class="row">
 
 	<div ng-repeat="profilearray in profilesArray | filter: {id: profileID}">
+		
 		<h3>Welcome Back {{profilearray.profileName}}!</h3>
 		<h3>You've Earned {{profilearray.rewardPoints}} Reward Points</h3>
+	
 	</div>
 </div>
 

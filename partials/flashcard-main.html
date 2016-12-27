@@ -1,11 +1,7 @@
 <div ng-include ="'./partials/profile-nav.html'"></div>
 
-<div class="row">
-	<div class="col s2 offset-s10"><button class="btn" ng-click="addNewHomework()">Create New Flashcard</button></div>
-</div>
-
-<div class="row">
-	<div class="col s4 offset-s4"><h4>Your Flashcards</h4></div>
+<div class="row" ng-repeat="profilearray in profilesArray | filter: {id: profileID}">
+	<div class="col s4 offset-s4"><h4>{{profilearray.profileName}}'s Practice Words</h4></div>
 </div>
 
 <div class="row">

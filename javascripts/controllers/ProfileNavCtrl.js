@@ -18,7 +18,7 @@ app.controller("ProfileNavCtrl", function($scope, $rootScope){
 		url:"#/reading/"+childId
 	},
 	{
-		name:"Flashcards", 
+		name:"Practice", 
 		url:"#/flashcard/main/"+childId
 	},
 	{

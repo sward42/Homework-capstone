@@ -4,7 +4,7 @@ app.factory("FlashcardFactory", function($http, $q, FIREBASE_CONFIG){
 
 	var getSpellingList = function(userId){
 		return $q((resolve, reject)=>{
-			$http.get(`${FIREBASE_CONFIG.databaseURL}/`spellingWords`.json?orderBy="uid"&equalTo="${userId}"`)
+			$http.get(`${FIREBASE_CONFIG.databaseURL}/spellingWords.json?orderBy="uid"&equalTo="${userId}"`)
 			 .success( (response)=>{
 			 	let spellingWords = [];
 			 	Object.keys(response).forEach((key)=>{
@@ -23,7 +23,7 @@ app.factory("FlashcardFactory", function($http, $q, FIREBASE_CONFIG){
 	var postNewSpellingWord = function(newSpellingWord){
 		return $q((resolve, reject)=>{
 			$http.post(`${FIREBASE_CONFIG.databaseURL}/spellingWords.json`, JSON.stringify({
-				spellingTitle: newSpellingWord.rewardTitle,
+				spellingName: newSpellingWord.spellingName,
 				profileId: newSpellingWord.profileId,
 				uid: newSpellingWord.uid
 				})

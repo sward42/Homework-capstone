@@ -19,11 +19,12 @@ app.controller("CardsSpellingCtrl", function($scope, $rootScope, $location, Flas
 
 	$scope.checkAnswer = function(correctAnswer, inputResponse){
 		if (correctAnswer === inputResponse) {
-			Materialize.toast('Correct!', 3000)
-			console.log("correct");
+			Materialize.toast('Correct! You spelled the word "' +inputResponse +'"', 3000);
+			responsiveVoice.speak('Correct! You spelled the word "' +inputResponse +'"', "US English Female");
+			
 		} else {
-			Materialize.toast('Incorrect. Try Again!', 3000)
-			console.log("incorrect");
+			Materialize.toast('Incorrect.  Try Again!', 3000);
+			responsiveVoice.speak('Incorrect.  Try Again!', "US English Female");
 		};
 	};
 
@@ -32,5 +33,19 @@ app.controller("CardsSpellingCtrl", function($scope, $rootScope, $location, Flas
 		FlashcardFactory.deleteSpellingWord(spellingId).then(function(response){
 		getSpellingCards();
 		 });
+	};
+
+	$scope.newSpellingCard = {};
+
+	$scope.addNewSpellingCard = function(){
+		console.log("profileID", $rootScope.profileID);
+		$scope.newSpellingCard.profileId = $rootScope.profileID;
+		$scope.newSpellingCard.uid = $rootScope.user.uid;
+		FlashcardFactory.postNewSpellingWord($scope.newSpellingCard).then(function(cardId){
+			
+			$scope.newReward = {};
+			$scope.newSpellingCard.spellingName = null;
+			getSpellingCards();
+		});
 	};
 });
