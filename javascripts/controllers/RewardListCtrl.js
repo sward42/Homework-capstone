@@ -34,10 +34,14 @@ app.controller("RewardListCtrl", function ($scope, $location, $rootScope, Profil
 		ProfileFactory.getSingleProfile(currentProfileId).then(function(currentProfile){
 			currentProfile.id = currentProfileId;
 			$scope.pointsProfile = currentProfile;
-			$scope.pointsProfile.rewardPoints -= minusRewardPoints;
-			console.log("pointsProfile", $scope.pointsProfile);
+			if ($scope.pointsProfile.rewardPoints >= minusRewardPoints) {
+				$scope.pointsProfile.rewardPoints -= minusRewardPoints;
+				console.log("pointsProfile", $scope.pointsProfile);
 
-			$scope.subtractPoints($scope.pointsProfile);
+				$scope.subtractPoints($scope.pointsProfile);
+			} else { 
+				Materialize.toast('You do not have enough points to redeem this reward.', 3000);
+			};
 		});
 	};
 
