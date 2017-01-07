@@ -2,21 +2,21 @@
 	"profiles":{
 		"profile0":{
 	    	"profileName": "Henry",
-	    	"profileImage": "",
+	    	"profileImage": "../images/ChalkBoy2.png",
 	    	"grade": "1",
 	    	"rewardPoints": 0,
 	    	"uid":"XYsIK8pC9Ghqo9cV7EHQ22o5eMg1"
     	},
     	"profile1":{
 	    	"profileName": "Liam",
-	    	"profileImage": "",
+	    	"profileImage": "../images/ChalkBoy1.png",
 	    	"grade": "3",
 	    	"rewardPoints": 0,
 	    	"uid":"XYsIK8pC9Ghqo9cV7EHQ22o5eMg1"
     	},
     	"profile2":{
 	    	"profileName": "Olivia",
-	    	"profileImage": "",
+	    	"profileImage": "../images/ChalkGirl2.png",
 	    	"grade": "1",
 	    	"rewardPoints": 100,
 	    	"uid":"A8LWa5JCAZRmp9ZLt12wTOZu7V63"
@@ -125,6 +125,48 @@
 		},
 		"spellingWord4":{
 			"spellingName":"which",
+			"profileId":"profile2",
+			"uid":"A8LWa5JCAZRmp9ZLt12wTOZu7V63"
+		}
+	},
+	"sightWords":{
+		"sightWord0":{
+			"sightName":"about",
+			"profileId":"profile2",
+			"uid":"A8LWa5JCAZRmp9ZLt12wTOZu7V63"
+		},
+		"sightWord1":{
+			"sightName":"when",
+			"profileId":"profile2",
+			"uid":"A8LWa5JCAZRmp9ZLt12wTOZu7V63"
+		},
+		"sightWord2":{
+			"sightName":"little",
+			"profileId":"profile2",
+			"uid":"A8LWa5JCAZRmp9ZLt12wTOZu7V63"
+		},
+		"sightWord3":{
+			"sightName":"big",
+			"profileId":"profile2",
+			"uid":"A8LWa5JCAZRmp9ZLt12wTOZu7V63"
+		}
+	},
+	"vocabWords":{
+		"vocabWord0":{
+			"vocabName":"camouflage",
+			"vocabDefinition":"to blend into one's surroundings",
+			"profileId":"profile2",
+			"uid":"A8LWa5JCAZRmp9ZLt12wTOZu7V63"
+		},
+		"vocabWord1":{
+			"vocabName":"agree",
+			"vocabDefinition":"to have the same opinion",
+			"profileId":"profile2",
+			"uid":"A8LWa5JCAZRmp9ZLt12wTOZu7V63"
+		},
+		"vocabWord2":{
+			"vocabName":"brave",
+			"vocabDefinition":"showing no fear of dangerous or difficult things",
 			"profileId":"profile2",
 			"uid":"A8LWa5JCAZRmp9ZLt12wTOZu7V63"
 		}

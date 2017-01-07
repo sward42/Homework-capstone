@@ -7,15 +7,20 @@
     </div>
 </div>
 
-<h3>Reading Log</h3>
+<div class="row">
+    <div class="col s11 offset-s1">
+        <h3>Reading Log</h3>
+    </div>
+</div>
+
 <div ng-repeat="readBook in readBooks | filter: {profileId:profileID}">
 
    <div class="row" >
         <form >
-            <div class="col s7">{{readBook.bookTitle}}</div>
+            <div class="col s6 offset-s1">{{readBook.bookTitle}}</div>
             <div class="col s2">{{readBook.author}}</div>
             <div class="col s1">{{readBook.dateRead | date : "MM/dd/yyyy"}}</div>
-            <div class="col s1"><button class="btn fa fa-trash-o" ng-click="deleteBook(readBook.id)"></button></div>
+            <div class="col s1"><button class="waves-effect waves-light btn btn-delete fa fa-trash-o" ng-click="deleteBook(readBook.id)"></button></div>
             
         </form>
     </div>

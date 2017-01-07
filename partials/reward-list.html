@@ -1,24 +1,26 @@
 <div ng-include ="'./partials/profile-nav.html'"></div>
 
-<div class="row" ng-repeat="profileArray in profilesArray">
-	<h3>{{profileArray.profileName}} you've Earned {{profileArray.rewardPoints}} Reward Points</h3>
-</div>
-
 <div class="row">
-    <div class="col s2 offset-s10">
+    <div class="col s3 offset-s9">
         <a href="#/reward/new"><button class="btn">Create New Reward</button></a>
     </div>
 </div>
 
-<div class="row" ng-repeat="rewardItem in rewardItems">
-	<div class="row" >
-        <form >
-            <div class="col s4"><h4>{{rewardItem.rewardTitle}}</h4></div>
-            <div class="col s4">{{rewardItem.description}}</div>
-            <div class="col s2">Cost: {{rewardItem.pointsNeeded}} Points</div>
-            <div class="col s1"><button class="btn" ng-click="selectProfile(rewardItem.profileId, rewardItem.pointsNeeded)">Select</button></div>
-            <div class="col s1"><button class="btn fa fa-trash-o" ng-click="deleteRewardItem(rewardItem.id)"></button></div>
-            
-        </form>
+<div class="row" ng-repeat="profileArray in profilesArray | filter: {id: profileID}">
+    <div class="col s11 offset-s1">
+        <h3>{{profileArray.profileName}} you've Earned {{profileArray.rewardPoints}} Reward Points</h3>
     </div>
 </div>
+
+<div class="row">
+    <div class="col s3 offset-s1" ng-repeat="rewardItem in rewardItems | filter: {profileId:profileID}">
+        <div><h4>{{rewardItem.rewardTitle}}</h4></div>
+        <div><p>{{rewardItem.description}}</p></div>
+        <div><p>Cost: {{rewardItem.pointsNeeded}} Points</p></div>
+        <div class="row">
+            <div class="col s1"><button class="btn fa fa-check-square-o" ng-click="selectProfile(rewardItem.profileId, rewardItem.pointsNeeded)"></button></div>
+            <div class="col s1 offset-s2"><button class="waves-effect waves-light btn btn-delete waves-red fa fa-trash-o" ng-click="deleteRewardItem(rewardItem.id)"></button></div>
+        </div>
+    </div>
+</div>    
+

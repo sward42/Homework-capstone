@@ -1,22 +1,33 @@
 <div ng-include ="'./partials/profile-nav.html'"></div>
 
-<div class="row">
 
-	<div ng-repeat="profilearray in profilesArray | filter: {id: profileID}">
+<div ng-repeat="profilearray in profilesArray | filter: {id: profileID}">
 		
-		<h3>Welcome Back {{profilearray.profileName}}!</h3>
-		<h3>You've Earned {{profilearray.rewardPoints}} Reward Points</h3>
+	<div class="row">
+		<div class="col s5 offset-s1">
+			<h3>Welcome Back {{profilearray.profileName}}!</h3>
+		</div>
+	</div>	
+	<div class="row">
+		<div class="col s2 offset-s2">
+			<img src="{{profilearray.profileImage}}" width=100% class="profile-image">
+		</div>
+		<div class="col s3 offset-s3 reward-div">
+			<h4 class="center-align">You've Earned</h4> 
+			<h1 class="center-align">{{profilearray.rewardPoints}}</h1> 
+			<h4 class="center-align">Reward Points</h4>
+		</div>
 	
 	</div>
 </div>
 
-<div class="row homework-list">
-	<div class="col s11 offset-s1">
-		<a href="#/homework/list/{{profileID}}"><h3>Upcoming Homework</h3></a>
+<!-- <div class="row homework-list">
+	<div class="col s6 offset-s6">
+		<h3 class="teal-color">Upcoming Homework</h3>
 	</div>
 	<div ng-repeat="homeworkItem in homeworkItems | filter: {profileId: profileID} | filter:{isCompleted:false}">
-		<div class="col s9 offset-s1">
+		<div class="col s5 offset-s7">
 			<p>{{homeworkItem.homeworkTitle}}</p>
 		</div>
 	</div>
-</div>
+</div> -->

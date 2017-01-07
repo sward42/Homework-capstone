@@ -1,6 +1,6 @@
 "use strict";
 
-app.factory("FlashcardFactory", function($http, $q, FIREBASE_CONFIG){
+app.factory("FlashcardFactory", function($http, $q, FIREBASE_CONFIG, DICTIONARY_CONFIG){
 
 	var getSpellingList = function(userId){
 		return $q((resolve, reject)=>{
@@ -49,5 +49,118 @@ app.factory("FlashcardFactory", function($http, $q, FIREBASE_CONFIG){
 		});
 	};
 
-	return {getSpellingList:getSpellingList, postNewSpellingWord:postNewSpellingWord, deleteSpellingWord:deleteSpellingWord};
+
+	var getSightList = function(userId){
+		return $q((resolve, reject)=>{
+			$http.get(`${FIREBASE_CONFIG.databaseURL}/sightWords.json?orderBy="uid"&equalTo="${userId}"`)
+			 .success( (response)=>{
+			 	let sightWords = [];
+			 	Object.keys(response).forEach((key)=>{
+			 		response[key].id = key;
+			 		sightWords.push(response[key]);
+			 	});
+			 	resolve(sightWords);
+			 })
+			 .error( (errorResponse)=>{
+			 	reject(errorResponse);
+			 });
+		});
+	};
+	
+	//Firebase: send a new sight word to Firebase
+	var postNewSightWord = function(newSightWord){
+		return $q((resolve, reject)=>{
+			$http.post(`${FIREBASE_CONFIG.databaseURL}/sightWords.json`, JSON.stringify({
+				sightName: newSightWord.sightName,
+				profileId: newSightWord.profileId,
+				uid: newSightWord.uid
+				})
+			)
+			 .success( (postResponse)=>{
+			 	resolve(postResponse);
+			 })
+			 .error( (errorResponse)=>{
+			 	reject(errorResponse);
+			 });
+		});
+	};
+
+	var deleteSightWord = function(sightWordId){
+		return $q((resolve, reject)=>{
+			$http.delete(`${FIREBASE_CONFIG.databaseURL}/sightWords/${sightWordId}.json`)
+			 .success( (deleteReponse)=>{
+			 	resolve(deleteReponse);
+			 })
+			 .error( (deleteError)=>{
+			 	reject(deleteError);
+			 });
+		});
+	};
+
+	var getVocabList = function(userId){
+		return $q((resolve, reject)=>{
+			$http.get(`${FIREBASE_CONFIG.databaseURL}/vocabWords.json?orderBy="uid"&equalTo="${userId}"`)
+			 .success( (response)=>{
+			 	let vocabWords = [];
+			 	Object.keys(response).forEach((key)=>{
+			 		response[key].id = key;
+			 		vocabWords.push(response[key]);
+			 	});
+			 	resolve(vocabWords);
+			 })
+			 .error( (errorResponse)=>{
+			 	reject(errorResponse);
+			 });
+		});
+	};
+	
+	//Firebase: send a new sight word to Firebase
+	var postNewVocabWord = function(newVocabWord){
+		return $q((resolve, reject)=>{
+			$http.post(`${FIREBASE_CONFIG.databaseURL}/vocabWords.json`, JSON.stringify({
+				vocabName: newVocabWord.vocabName,
+				vocabDefinition: newVocabWord.vocabDefinition,
+				profileId: newVocabWord.profileId,
+				uid: newVocabWord.uid
+				})
+			)
+			 .success( (postResponse)=>{
+			 	resolve(postResponse);
+			 })
+			 .error( (errorResponse)=>{
+			 	reject(errorResponse);
+			 });
+		});
+	};
+
+	var deleteVocabWord = function(vocabWordId){
+		return $q((resolve, reject)=>{
+			$http.delete(`${FIREBASE_CONFIG.databaseURL}/vocabWords/${vocabWordId}.json`)
+			 .success( (deleteReponse)=>{
+			 	resolve(deleteReponse);
+			 })
+			 .error( (deleteError)=>{
+			 	reject(deleteError);
+			 });
+		});
+	};
+
+	var getDefinition = function(vocabWord){
+		return $q((resolve, reject)=>{
+			$http.get(`${DICTIONARY_CONFIG.dictionaryURL}/${vocabWord}?key=${DICTIONARY_CONFIG.apiKey}`)
+			.success( (response)=>{
+				console.log("response", response);
+			 	resolve(response);
+			 })
+			 .error( (errorResponse)=>{
+			 	reject(errorResponse);
+			 });
+		});
+	};
+
+
+	return {getSpellingList:getSpellingList, postNewSpellingWord:postNewSpellingWord, deleteSpellingWord:deleteSpellingWord, 
+			getSightList:getSightList, postNewSightWord:postNewSightWord, deleteSightWord:deleteSightWord, 
+			getVocabList:getVocabList, postNewVocabWord:postNewVocabWord, deleteVocabWord:deleteVocabWord,
+			getDefinition:getDefinition};
 });

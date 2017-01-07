@@ -56,6 +56,7 @@ app.controller("HomeworkCtrl", function($scope, $location, $rootScope, $routePar
 	$scope.addPoints = function(anyProfile){
 		ProfileFactory.addRewardPoints(anyProfile).then(function(response){
 			console.log("points response", response);
+			Materialize.toast("You've Earned 5 Reward Points!", 3000);
 		});
 	};
 

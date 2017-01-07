@@ -1,0 +1,32 @@
+<div ng-include ="'./partials/profile-nav.html'"></div>
+
+<div class="row">
+    <div class="col s6 offset-s1">
+        <h1>Sight Words</h1>	
+    </div>
+</div>
+
+<div class="row">
+	<div class="col s3 offset-s9">
+		<input type="text" placeholder="New Sight Word" ng-model="newSightCard.sightName">
+		<button class="btn" ng-click="addNewSightCard()">Add Word</button>
+	</div>
+</div>
+
+<div class="row">
+    <div class="col s3 offset-s1" id="sightCard.indexOf(sightName)" ng-repeat="sightCard in sightCards | filter: {profileId:profileID}">
+        <div class="card transparent card-style">
+            <div class="card-content white-text">
+                <div class="center-align">
+                    <span ng-src class="card-title"><h3>{{sightCard.sightName}}</h3></span>
+                    <i class="fa fa-volume-up fa-2x" aria-hidden="true" ng-click="speakWord(sightCard.sightName)"></i>
+                </div>
+                <div class="row">
+                    <div class="center-align"><p><button class="waves-effect waves-light btn btn-delete fa fa-trash-o" ng-click="deleteSightCard(sightCard.id)"></button></p></div>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

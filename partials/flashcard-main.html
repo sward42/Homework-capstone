@@ -1,18 +1,18 @@
 <div ng-include ="'./partials/profile-nav.html'"></div>
 
 <div class="row" ng-repeat="profilearray in profilesArray | filter: {id: profileID}">
-	<div class="col s4 offset-s4"><h4>{{profilearray.profileName}}'s Practice Words</h4></div>
+	<div class="col s12"><h2 class="center-align">{{profilearray.profileName}}'s Practice Words</h2></div>
 </div>
 
 <div class="row">
-	<div class="col s4 offset-s4"><button class="btn" ng-click="showSightCards()">Sight Words</button></div>
+	<div class="col s4 offset-s4 center-align"><button class="btn" ng-click="showSightCards()">Sight Words</button></div>
 </div>
 
 <div class="row">	
-	<div class="col s4 offset-s4"><button class="btn" ng-click="showSpellingCards()">Spelling Words</button></div>
+	<div class="col s4 offset-s4 center-align"><button class="btn" ng-click="showSpellingCards()">Spelling Words</button></div>
 </div>
 
 <div class="row">	
-	<div class="col s4 offset-s4"><button class="btn" ng-click="showVocabCards()">Vocab Words</button></div>
+	<div class="col s4 offset-s4 center-align"><button class="btn" ng-click="showVocabCards()">Vocab Words</button></div>
 </div>
 

@@ -17,6 +17,10 @@ app.controller("CardsSpellingCtrl", function($scope, $rootScope, $location, Flas
 		responsiveVoice.speak(inputWord, "US English Female");
 	};
 
+	$scope.showWord = function(inputWord){
+		Materialize.toast(inputWord, 4000);
+	};
+
 	$scope.checkAnswer = function(correctAnswer, inputResponse){
 		if (correctAnswer === inputResponse) {
 			Materialize.toast('Correct! You spelled the word "' +inputResponse +'"', 3000);
@@ -25,7 +29,7 @@ app.controller("CardsSpellingCtrl", function($scope, $rootScope, $location, Flas
 		} else {
 			Materialize.toast('Incorrect.  Try Again!', 3000);
 			responsiveVoice.speak('Incorrect.  Try Again!', "US English Female");
-		};
+		}
 	};
 
 	$scope.deleteSpellingCard = function(spellingId){

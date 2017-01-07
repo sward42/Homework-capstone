@@ -38,16 +38,17 @@ app.controller("RewardListCtrl", function ($scope, $location, $rootScope, Profil
 				$scope.pointsProfile.rewardPoints -= minusRewardPoints;
 				console.log("pointsProfile", $scope.pointsProfile);
 
-				$scope.subtractPoints($scope.pointsProfile);
+				$scope.subtractPoints($scope.pointsProfile, minusRewardPoints);
 			} else { 
 				Materialize.toast('You do not have enough points to redeem this reward.', 3000);
-			};
+			}
 		});
 	};
 
-	$scope.subtractPoints = function(anyProfile){
+	$scope.subtractPoints = function(anyProfile, minusRewardPoints){
 		RewardFactory.subtractRewardPoints(anyProfile).then(function(response){
 			console.log("points response", response);
+			Materialize.toast('You used '+minusRewardPoints+' Reward Points.', 3000);
 			profileUpdate();
 		});
 

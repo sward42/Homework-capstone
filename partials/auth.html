@@ -1,12 +1,25 @@
+<!-- <canvas width=1433 height=500></canvas>
+ -->
+<div class="row">
+<div class="center-align">
+	<h1 class="landing-title">HomeWork</h1>
+	<p>An education and literacy tracker for elementary students and their parents</p>
+	</div>
+</div>
+
 <div class="container">
 	<div class="row">
-		<button class="waves-effect waves-light btn col s3 offset-s1" ng-click="setRegisterContainer()">Register</button>
-		<button class="waves-effect waves-light btn col s3 offset-s1" ng-click="setLoginContainer()">Login</button>
+	<div class="center-align">
+		<a href="#/auth"><button class="waves-effect waves-light btn" ng-click="setRegisterContainer()">Register</button></a>
+		<a href="#/auth"><button class="waves-effect waves-light btn" ng-click="setLoginContainer()">Login</button></a>
 		<!-- <button class="waves-effect waves-light btn col s3 offset-s1" ng-click="loginGoogleUser()">Google Sign In</button> -->
+	</div>
 	</div>
 	<div class="row">
 		<div ng-show="loginContainer">
-			<h3>LOGIN FORM</h3>
+			<div class="col s10 offset-s1">
+				<h3>LOGIN FORM</h3>
+			</div>
 			<div class="row">
 				<input id="login-email" type="email" class="input-field col s10 offset-s1" placeholder="Email address" ng-model="login.email" required autofocus>
 			</div>
@@ -18,7 +31,9 @@
 			</div>
 		</div>
 		<div ng-show="registerContainer">
-			<h3>REGISTER FORM</h3>
+			<div class="col s10 offset-s1">
+				<h3>REGISTER FORM</h3>
+			</div>
 			<div class="row">
 				<input type="email" class="input-field col s10 offset-s1" placeholder="Email address" ng-model="register.email" required autofocus>
 			</div>
