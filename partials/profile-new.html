@@ -1,20 +1,40 @@
-<h3>Create New Child Profile</h3>
-
 <div class="row">
-	<form class="col s12">
-		
-		<div class="input-field">
-			<input placeholder="Child Name" id="profile_name" type="text" class="validate" ng-model="newProfileName">
-		</div>
+	<div class="col s8 offset-s2">
+		<h3>Create New Child Profile</h3>
 
-		<div class="input-field">
-			<select ng-model="newProfileGrade" material-select >
-				<option value="" disabled selected>Select Grade Level</option>
-				<option ng-repeat="gradeLevel in gradeLevels" value="{{gradeLevel.grade}}">{{gradeLevel.grade}}</option>
-			</select>
-		</div>
+			<form>
+				<div class="input-field">
+					<input placeholder="Child Name" id="profile_name" type="text" class="validate" ng-model="newProfileName">
+				</div>
 
-		<button class="btn col s2" ng-click="createNewProfileThenReloadProfiles()">Create!</button>
-		
-	</form>
+				<div class="input-field">
+					<select ng-model="newProfileGrade" material-select >
+						<option value="" disabled selected>Select Grade Level</option>
+						<option ng-repeat="gradeLevel in gradeLevels" value="{{gradeLevel.grade}}">{{gradeLevel.grade}}</option>
+					</select>
+				</div>
+
+				<div class="input-field">
+					<select ng-model="newProfileImage" material-select>
+						<option value="" disabled selected>Select an Image</option>
+						<option value="../images/ChalkBoy1.png" data-icon="../images/ChalkBoy1.png" class="circle">Boy 1</option>
+						<option value="../images/ChalkBoy2.png" data-icon="../images/ChalkBoy2.png" class="circle">Boy 2</option>
+						<option value="../images/ChalkGirl1.png" data-icon="../images/ChalkGirl1.png" class="circle">Girl 1</option>
+						<option value="../images/ChalkGirl2.png" data-icon="../images/ChalkGirl2.png" class="circle">Girl 2</option>
+						
+					</select>
+				</div>
+
+				<div class="carousel">
+				    <a class="carousel-item" href="#one!"><img src="../images/ChalkBoy1.png"></a>
+				    <a class="carousel-item" href="#two!"><img src="../images/ChalkBoy2.png"></a>
+				    <a class="carousel-item" href="#three!"><img src="../images/ChalkGirl1.png"></a>
+				    <a class="carousel-item" href="#four!"><img src="../images/ChalkGirl2.png"></a>
+			  	</div>
+
+				<div class="right-align">
+					<button class="btn" ng-click="createNewProfileThenReloadProfiles()">Add Child</button>
+				</div>
+			</form>
+	</div>
 </div>

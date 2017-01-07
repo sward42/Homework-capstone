@@ -1,12 +1,41 @@
+<div ng-include ="'./partials/profile-nav.html'"></div>
+
 <div class="row">
-	<div class="carousel carousel-slider center col s10 offset-s1" data-indicators="true" >
-		<div class="carousel-fixed-item center">
-		  <a class="btn waves-effect white grey-text darken-text-2">Exit</a>
-		</div>
-		<div class="carousel-item red white-text" href="#one!">
-		  <h2>Title</h2>
-		  <p class="white-text">This is your first panel</p>
-		</div>
-		
-  	</div>
+    <div class="col s6 offset-s1">
+        <h1>Spelling Words</h1>	
+    </div>
 </div>
+
+<div class="row">
+	<div class="col s3 offset-s9">
+		<input type="text" placeholder="New Spelling Word" ng-model="newSpellingCard.spellingName">
+		<button class="btn" ng-click="addNewSpellingCard()">Add Word</button>
+	</div>
+</div>
+
+	<div class="row">
+        <div class="col s3 offset-s1" ng-repeat="spellingCard in spellingCards | filter: {profileId:profileID}">
+            <div class="card transparent card-style">
+                <div class="card-content white-text">
+                <!-- <span ng-src class="card-title" ng-show="response == '{{spellingCard.spellingName}}'">{{spellingCard.spellingName}}</span> -->
+                    <div class="center-align">
+                        <h3 >Word {{spellingCards.indexOf(spellingCard) +1}}</h3>
+                        
+                        <div class="row">
+                            <i class="fa fa-volume-up fa-2x" aria-hidden="true" ng-click="speakWord(spellingCard.spellingName)"></i>
+                            <i class="fa fa-eye fa-2x card-spacing" aria-hidden="true" ng-click="showWord(spellingCard.spellingName)"></i>
+                        </div>
+                    </div>
+                    <div>
+                        <input type="text" id="spellingAnswer{{spellingCards.indexOf(spellingCard)}}" placeholder="Enter Spelling" ng-model="response">
+                        <button class="btn" ng-click="checkAnswer(spellingCard.spellingName, response)">Enter</button>
+                        <button class="waves-effect waves-light btn btn-delete fa fa-trash-o btn-spelling" ng-click="deleteSpellingCard(spellingCard.id)"></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+  
+
+
+        

@@ -9,7 +9,7 @@ app.controller("ReadingNewCtrl", function($scope, $rootScope, $location, Reading
 		ProfileFactory.getSingleProfile(currentProfileId).then(function(currentProfile){
 			currentProfile.id = currentProfileId;
 			$scope.pointsProfile = currentProfile;
-			$scope.pointsProfile.rewardPoints += 5;
+			$scope.pointsProfile.rewardPoints += 10;
 			console.log("pointsProfile", $scope.pointsProfile);
 
 			$scope.addPoints($scope.pointsProfile);
@@ -19,6 +19,7 @@ app.controller("ReadingNewCtrl", function($scope, $rootScope, $location, Reading
 	$scope.addPoints = function(anyProfile){
 		ProfileFactory.addRewardPoints(anyProfile).then(function(response){
 			console.log("points response", response);
+			Materialize.toast("You've earned 10 Reward Points!", 3000);
 		});
 	};
 

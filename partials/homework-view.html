@@ -1,5 +1,9 @@
 <div ng-include ="'./partials/profile-nav.html'"></div>
 
-<h3>{{selectedHomework.homeworkTitle}}</h3>
-<h4>Due: {{selectedHomework.dueDate | date: "MM/dd/yyyy"}}</h4>
-<a ng-href="#/homework/edit/{{selectedHomework.id}}"><button class="btn fa fa-pencil-square-o"></button></a>
+<div class="row">
+	<div class="col s8 offset-s2">
+		<h3>{{selectedHomework.homeworkTitle}}</h3>
+		<h4>Due: {{selectedHomework.dueDate | date: "MM/dd/yyyy"}}</h4>
+		<div class="col 2 offset-s10"><a ng-href="#/homework/edit/{{selectedHomework.id}}"><button class="btn fa fa-pencil-square-o"></button></a>
+	</div>
+</div>

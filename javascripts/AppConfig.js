@@ -104,6 +104,16 @@ app.config(function($routeProvider){
 			controller: 'CardsSpellingCtrl',
 			resolve: {isAuth}
 		})
+		.when('/cards/sight/:id', {
+			templateUrl: 'partials/cards-sight.html',
+			controller: 'CardsSightCtrl',
+			resolve: {isAuth}
+		})
+		.when('/cards/vocab/:id', {
+			templateUrl: 'partials/cards-vocab.html',
+			controller: 'CardsVocabCtrl',
+			resolve: {isAuth}
+		})
 		.when('/logout', {
 			templateUrl: 'partials/auth.html',
 			controller: 'AuthCtrl'
